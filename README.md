@@ -5,7 +5,7 @@ Simple ReactJS project to experiment.
 Using rollupjs to bundle.
 
 # Redux
-Using Redux to manange state.
+Using Redux to manage state.
 
 # Storybook
 Using Storybook to develop components.
