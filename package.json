@@ -14,16 +14,18 @@
     "node-sass": "^4.9.3",
     "rollup": "^0.66.1",
     "rollup-plugin-postcss": "^1.6.2",
-    "serve": "^10.0.1",
+    "serve": "^10.0.2",
     "typescript": "^3.0.3"
   },
   "scripts": {
-    "build": "rollup -c",
+    "build:js": "rollup -c",
+    "build:css": "node-sass -o build src",
+    "build": "concurrently -n css,js npm:build:css npm:build:js",
     "watch": "rollup -c --watch",
     "watch:js": "tsc -w",
     "watch:css": "node-sass -wr -o build src",
     "serve": "serve",
-    "start": "concurrently npm:watch:css npm:watch:js npm:watch npm:serve npm:reload",
+    "start": "concurrently -n css,js,watch,serve,reload npm:watch:css npm:watch:js npm:watch npm:serve npm:reload",
     "reload": "livereload public/build"
   }
 }
