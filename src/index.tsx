@@ -12,12 +12,10 @@ const rootReducer = (state = {
     }
 };
 
-/* eslint-disable no-underscore-dangle */
 const store = Redux.createStore(
     rootReducer,
     (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__()
 );
-/* eslint-enable */
 
 export const MyFunction = () => <div>Hello World!12</div>
 
