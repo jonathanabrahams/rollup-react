@@ -3,6 +3,7 @@ import postcss from 'rollup-plugin-postcss';
 export default {
   input: 'build/index.js',
   external: ['react', 'react-dom', 'redux'],
+  context: 'this',
   output: {
     file: 'public/build/bundle.js',
     format: 'iife',
